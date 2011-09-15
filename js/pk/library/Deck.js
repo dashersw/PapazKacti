@@ -27,17 +27,9 @@ goog.require('pk.Card');
  * @constructor
  */
 pk.Deck = function() {
-    this.cards = [];
-    this.initialize();
-};
-
-
-/**
- * Initializes the deck; generates card instances.
- */
-pk.Deck.prototype.initialize = function() {
     var that = this;
     that.cards = [];
+
     goog.object.forEach(pk.Card.Suit, function(suit) {
         goog.object.forEach(pk.Card.Rank, function(rank) {
             that.cards.push(new pk.Card(rank, suit));
