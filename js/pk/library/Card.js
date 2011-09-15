@@ -54,6 +54,7 @@ pk.Card.Rank = {
     FIVE: 'Five',
     SIX: 'Six',
     SEVEN: 'Seven',
+    EIGHT: 'Eight',
     NINE: 'Nine',
     TEN: 'Ten',
     JACK: 'Jack',
