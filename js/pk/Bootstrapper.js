@@ -19,6 +19,8 @@
 goog.provide('pk.Bootstrapper');
 goog.require('pk.Card');
 goog.require('pk.Deck');
+goog.require('pk.engine.Base');
+goog.require('pk.Stack');
 
 
 
@@ -27,5 +29,5 @@ goog.require('pk.Deck');
  * @constructor
  */
 pk.Bootstrapper = function() {
-    var deck = new pk.Deck();
+    return new pk.engine.Base();
 };
