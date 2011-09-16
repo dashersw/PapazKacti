@@ -19,16 +19,17 @@
 goog.provide('pk.Deck');
 goog.require('goog.object');
 goog.require('pk.Card');
-
+goog.require('pk.CardCollection');
 
 
 /**
  * Deck class. Holds a full deck of cards.
  * @constructor
+ * @extends {pk.CardCollection}
  */
 pk.Deck = function() {
     var that = this;
-    that.cards = [];
+    goog.base(this);
 
     goog.object.forEach(pk.Card.Suit, function(suit) {
         goog.object.forEach(pk.Card.Rank, function(rank) {
@@ -36,12 +37,4 @@ pk.Deck = function() {
         });
     });
 };
-
-
-/**
- * Shuffles the cards in the deck.
- */
-pk.Deck.prototype.shuffle = function() {
-    goog.array.shuffle(this.cards);
-};
-
+goog.inherits(pk.Deck, pk.CardCollection);
