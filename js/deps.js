@@ -886,8 +886,13 @@ goog.addDependency('../../../../../library/tartJS/third_party/jasmine/src/html/T
 goog.addDependency('../../../../../library/tartJS/third_party/jasmine/src/mock-timeout.js', [], []);
 goog.addDependency('../../../../../library/tartJS/third_party/jasmine/src/util.js', [], []);
 goog.addDependency('../../../../../library/tartJS/third_party/jquery/jquery-1.5.2.js', [], []);
-goog.addDependency('../../../../../pk/Bootstrapper.js', ['pk.Bootstrapper'], ['pk.Card', 'pk.Deck']);
+goog.addDependency('../../../../../pk/Bootstrapper.js', ['pk.Bootstrapper'], ['pk.Card', 'pk.Deck', 'pk.Stack', 'pk.engine.Base']);
+goog.addDependency('../../../../../pk/engine/Base.js', ['pk.engine.Base'], ['pk.engine.Config']);
+goog.addDependency('../../../../../pk/engine/Config.js', ['pk.engine.Config'], []);
 goog.addDependency('../../../../../pk/externs/pk.externs.js', [], []);
 goog.addDependency('../../../../../pk/library/Card.js', ['pk.Card'], []);
-goog.addDependency('../../../../../pk/library/Deck.js', ['pk.Deck'], ['goog.object', 'pk.Card']);
-goog.addDependency('../../../../../pk/library/Stack.js', ['pk.Stack'], ['pk.Deck']);
+goog.addDependency('../../../../../pk/library/CardCollection.js', ['pk.CardCollection'], []);
+goog.addDependency('../../../../../pk/library/Deck.js', ['pk.Deck'], ['goog.object', 'pk.Card', 'pk.CardCollection']);
+goog.addDependency('../../../../../pk/library/Hand.js', ['pk.Hand'], ['pk.CardCollection']);
+goog.addDependency('../../../../../pk/library/Player.js', ['pk.Player'], []);
+goog.addDependency('../../../../../pk/library/Stack.js', ['pk.Stack'], ['goog.array', 'pk.CardCollection', 'pk.Deck']);
