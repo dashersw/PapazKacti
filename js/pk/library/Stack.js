@@ -17,6 +17,8 @@
  */
 
 goog.provide('pk.Stack');
+goog.require('goog.array');
+goog.require('pk.CardCollection');
 goog.require('pk.Deck');
 
 
@@ -24,8 +26,24 @@ goog.require('pk.Deck');
 /**
  * Stack class for a card game. A stack may be composed of one or more decks and holds all the cards in a game.
  * @constructor
+ * @extends {pk.CardCollection}
  * @param {number} deckCount Number of decks this stack will consist of.
  */
 pk.Stack = function(deckCount) {
+    goog.base(this);
+    if (deckCount > 1)
+        this.deckCount = deckCount;
 
+    while (deckCount--) {
+        var deck = new pk.Deck();
+        this.cards = goog.array.concat(this.cards, deck.draw(0, deck.getNumberOfRemainingCards()));
+    }
 };
+goog.inherits(pk.Stack, pk.CardCollection);
+
+
+/**
+ * Default deck count of the stack.
+ * @type {number}
+ */
+pk.Stack.prototype.deckCount = 1;
